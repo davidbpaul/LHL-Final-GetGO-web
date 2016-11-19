@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import NavBar from './NavBar.jsx'
+import ArticleBody from './loggedIn/articleBody.jsx'
+import Home from './home.jsx'
 
 class App extends Component {
 // initial state
@@ -10,17 +11,17 @@ class App extends Component {
       availableRoutes: [],
       userLocation: { currentLocation:[], destination:[]},
       routeCount: 0,
+      currentTime:0,
+      arrivalTime:0,
+      destinationTime:0
+
     };
   }
-
 
   render() {
     return (
       <div>
-          <nav>
-            <span className='userCount'>{this.state.userCount} users online</span>
-            <h1>Chatty</h1>
-          </nav>
+      <ArticleBody />
       </div>
     );
   }
