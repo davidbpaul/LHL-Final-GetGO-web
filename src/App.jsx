@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ArticleBody from './loggedIn/articleBody.jsx'
-import Home from './home.jsx'
+// import Home from './home.jsx'
 
 class App extends Component {
 // initial state
