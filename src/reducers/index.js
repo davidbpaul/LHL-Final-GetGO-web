@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import AgenciesReducer from './reducerAgencies.jsx';
-import RoutesReducer from './reducerRoutes.jsx';
-import TripsReducer from './reducerTrips.jsx';
+import AgenciesReducer from './reducerAgencies.js';
+import RoutesReducer from './reducerRoutes.js';
+import TripsReducer from './reducerTrips.js';
 
 const rootReducer = combineReducers({
   agencies: AgenciesReducer,
