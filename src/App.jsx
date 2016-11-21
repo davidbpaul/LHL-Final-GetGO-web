@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import ArticleBody from './loggedIn/articleBody.jsx'
-// import Home from './home.jsx'
+import Home from './homeScreen/home.jsx'
+import Guest from './visitor/guest.jsx'
 
 class App extends Component {
-// initial state
   constructor(props) {
     super(props);
     this.state = {
@@ -18,6 +18,8 @@ class App extends Component {
     };
   }
 
+    // <Home />
+    //  <Guest />
   render() {
     return (
       <div>
