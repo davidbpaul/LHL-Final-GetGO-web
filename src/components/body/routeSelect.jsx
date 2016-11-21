@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
 import {bsStyle} from 'react-bootstrap';
-import Forms from './forms.jsx';
+import RouteSelectForm from './routeSelectForm.jsx';
 
 class RouteSelect extends Component {
   render() {
@@ -9,7 +9,7 @@ class RouteSelect extends Component {
       <div>
       <Jumbotron>
         <form>
-         <Forms />
+         <RouteSelectForm />
         </form>
       </Jumbotron>
       </div>

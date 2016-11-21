@@ -5,7 +5,7 @@ import {bsStyle} from 'react-bootstrap';
 
 
 
-class Tables extends Component {
+class TripOverView extends Component {
   render() {
     return (
       <div>
@@ -43,4 +43,4 @@ class Tables extends Component {
     );
   }
 };
-export default Tables;
+export default TripOverView;
