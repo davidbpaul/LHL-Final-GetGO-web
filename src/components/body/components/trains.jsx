@@ -3,7 +3,7 @@ import { Jumbotron} from 'react-bootstrap';
 import {bsStyle} from 'react-bootstrap';
 import Tables from './tables.jsx';
 
-class Jumbotrons2 extends Component {
+class Trains extends Component {
   render() {
     return (
       <div>
@@ -15,4 +15,4 @@ class Jumbotrons2 extends Component {
     );
   }
 };
-export default Jumbotrons2;
+export default Trains;

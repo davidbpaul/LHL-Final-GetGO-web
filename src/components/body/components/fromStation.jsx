@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Well} from 'react-bootstrap';
 import {bsStyle} from 'react-bootstrap';
 
-class Wells3 extends Component {
+class FromStation extends Component {
   render() {
     return (
       <div>
@@ -14,4 +14,4 @@ class Wells3 extends Component {
     );
   }
 };
-export default Wells3;
+export default FromStation;

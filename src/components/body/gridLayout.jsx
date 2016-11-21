@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import Alerts from './components/alerts.jsx';
-import Jumbotrons from './components/jumbotrons.jsx';
-import Wells from './components/wells.jsx';
-import Wells2 from './components/wells2.jsx';
-import Wells3 from './components/wells3.jsx';
-import Jumbotrons2 from './components/jumbotrons2.jsx';
+import Tip from './components/tip.jsx';
+import RouteSelect from './components/routeSelect.jsx';
+import Date from './components/date.jsx';
+import Time from './components/time.jsx';
+import FromStation from './components/fromStation.jsx';
+import Trains from './components/trains.jsx';
 
 class GridLayout extends Component {
   render() {
@@ -14,22 +14,22 @@ class GridLayout extends Component {
       <Grid>
       <Row className="show-grid">
         <Col xs={12} md={12}>{
-          <Alerts />
+          <Tip />
         }</Col>
         <Col xs={12} md={12}>{
-          <Jumbotrons />
+          <RouteSelect />
         }</Col>
         <Col xs={12} md={12}>{
-         <Wells />
+         <Date />
         }</Col>
         <Col xs={12} md={12}>{
-         <Wells2 />
+         <Time />
         }</Col>
         <Col xs={12} md={12}>{
-          <Wells3 />
+          <FromStation />
         }</Col>
       <Col xs={12} md={12}>{
-        <Jumbotrons2 />
+        <Trains />
       }</Col>
       </Row>
       </Grid>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Alert, Button } from 'react-bootstrap';
 import {bsStyle} from 'react-bootstrap';
 
-class Alerts extends Component {
+class Tip extends Component {
   render() {
     return (
       <div>
@@ -18,4 +18,4 @@ class Alerts extends Component {
     );
   }
 };
-export default Alerts;
+export default Tip;

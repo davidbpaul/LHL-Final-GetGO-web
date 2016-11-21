@@ -3,7 +3,7 @@ import { Jumbotron, Button } from 'react-bootstrap';
 import {bsStyle} from 'react-bootstrap';
 import Forms from './forms.jsx';
 
-class Jumbotrons extends Component {
+class RouteSelect extends Component {
   render() {
     return (
       <div>
@@ -16,4 +16,4 @@ class Jumbotrons extends Component {
     );
   }
 };
-export default Jumbotrons;
+export default RouteSelect;
