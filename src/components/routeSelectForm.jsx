@@ -5,19 +5,23 @@ import {bsStyle} from 'react-bootstrap';
 
 class RouteSelectForm extends Component {
 
+  //
+  // renderSelect(item){
+  //   if(item == undefined || item == null){
+  //     item == 'select something'
+  //   }
+  //   else{
+  //     return item
+  //   }
+  // }
+  renderOptions(items){
+  return items.map(item => <option key={item} value="other">{item}</option>)
 
-  renderSelect(item){
-    if(item == undefined || item == null){
-      item == 'select something'
-    }
-    else{
-      return item
-    }
   }
-  renderMessages() {
-  return messages.map((message) => <Message i={ message } key={ message.id } />)
-}
 
+  renderStops(items){
+    return items.map(item => <option key={item} value="other">{item}</option>)
+  }
 
   render() {
     return (
@@ -25,20 +29,20 @@ class RouteSelectForm extends Component {
       <FormGroup controlId="formControlsSelect">
       <ControlLabel>Route</ControlLabel>
       <FormControl componentClass="select" placeholder="select">
-        <option value="select">{this.props.route.val}</option>
-        <option value="other"></option>
+        <option value="select"></option>
+        { this.renderOptions(this.props.i) }
+
       </FormControl>
         <ControlLabel>Location</ControlLabel>
         <FormControl componentClass="select" placeholder="select">
-          <option value="select">Union</option>
-          <option value="other">missasoga</option>
-          <option value="other">brampton</option>
+          <option value="select"></option>
+          { this.renderStops(this.props.s) }
         </FormControl>
         <ControlLabel>Destination</ControlLabel>
         <FormControl componentClass="select" placeholder="select">
-          <option value="select">Union</option>
-          <option value="other">missasoga</option>
-          <option value="other">brampton</option>
+          <option value="select"></option>
+          { this.renderStops(this.props.s) }
+
         </FormControl>
       </FormGroup>
       <Button type="submit">

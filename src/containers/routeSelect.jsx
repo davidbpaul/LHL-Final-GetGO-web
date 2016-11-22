@@ -7,23 +7,24 @@ import RouteSelectForm from '../components/routeSelectForm.jsx';
 
 class RouteSelect extends Component {
 
-
-  //
-  // onListItemCheck(route, event) {
-  //   this.props.selectedRoutes(route, event.target);
-  // }
-  //
-  // renderRoutes(val, index, arr){
-  //   return(
-  //     <li key={index}>
-  //       <input onClick={this.onListItemCheck.bind(this, route)} />
-  //         {val}
-  //     </li>
-  //   )
-  // }
-
   renderMessages(routes) {
-   return routes.map((route) => <RouteSelectForm i={ route }/>)
+    var messages = [];
+    routes.map( (route) => {
+      messages.push(route.route)
+    });
+
+    return messages
+ }
+ renderStops(routes){
+    var stops = []
+   routes.forEach( (route) => {
+     if(route.route === 'Lakeshore West')
+     route.stops.map( (routeStops) => {
+        stops.push(routeStops)
+        console.log(stops)
+     });
+   });
+   return stops
  }
 
   render() {
@@ -31,34 +32,16 @@ class RouteSelect extends Component {
       <div>
       <Jumbotron>
         <form>
-          { this.renderMessages(this.props.routes) }
+          <RouteSelectForm
+          i= { this.renderMessages(this.props.route) }
+          s= { this.renderStops(this.props.route)}
+          />
         </form>
       </Jumbotron>
       </div>
     );
   }
 };
-
-// render() {
-//   return (
-//     <div>
-//     <Jumbotron>
-//       <form>
-//        <RouteSelectForm />
-//         {/* <ul>
-//           {this.props.selectedRoutes.map(route => <li>{route}</li>)}
-//         </ul> */}
-//         {/* <h3>All Posts</h3> */}
-//         <ul>
-//           {this.props.route.map((val, index, arr) => this.renderRoutes.bind(this, val, index, arr))}
-//         </ul>
-//        </RouteSelectForm>
-//       </form>
-//     </Jumbotron>
-//     </div>
-//   );
-// }
-// };
 
 function mapStateToProps(state){
 //whatever is returned here will show up as props
