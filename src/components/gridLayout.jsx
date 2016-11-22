@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import Tip from './tip.jsx';
-import RouteSelect from '../containers/RouteSelect.jsx';
+import RouteSelect from '../containers/routeSelect.jsx';
 import Date from './date.jsx';
 import Time from './time.jsx';
 import Trains from './trains.jsx';

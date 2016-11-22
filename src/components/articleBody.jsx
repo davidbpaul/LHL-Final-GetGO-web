@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import NavHead from './nav/navHead.jsx';
-import GridLayout from './body/gridLayout.jsx';
+import NavHead from '../containers/navHead.jsx';
+import GridLayout from './gridLayout.jsx';
 
 class ArticleBody extends Component {
   render() {

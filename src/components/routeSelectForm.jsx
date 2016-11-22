@@ -4,15 +4,29 @@ import {bsStyle} from 'react-bootstrap';
 
 
 class RouteSelectForm extends Component {
+
+
+  renderSelect(item){
+    if(item == undefined || item == null){
+      item == 'select something'
+    }
+    else{
+      return item
+    }
+  }
+  renderMessages() {
+  return messages.map((message) => <Message i={ message } key={ message.id } />)
+}
+
+
   render() {
     return (
       <div>
       <FormGroup controlId="formControlsSelect">
       <ControlLabel>Route</ControlLabel>
       <FormControl componentClass="select" placeholder="select">
-        <option value="select">west</option>
-        <option value="other">east</option>
-        <option value="other">vertical</option>
+        <option value="select">{this.props.route.val}</option>
+        <option value="other"></option>
       </FormControl>
         <ControlLabel>Location</ControlLabel>
         <FormControl componentClass="select" placeholder="select">

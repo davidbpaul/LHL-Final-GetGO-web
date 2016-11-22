@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
-import App from './containers/App.jsx';
+import App from './App.jsx';
 import reducers from './reducers';
 
 ReactDOM.render(
