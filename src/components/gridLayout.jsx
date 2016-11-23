@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Well } from 'react-bootstrap';
 import Tip from './tip.jsx';
-import RouteSelect from '../containers/routeSelect.jsx';
+import SelectRouteComponent from './SelectRouteComponent.jsx';
 import DateComponent from './dateComponent.jsx';
 import Time from './time.jsx';
 import Trains from './trains.jsx';
@@ -13,19 +13,29 @@ class GridLayout extends Component {
         <Grid>
           <Row className="show-grid">
             <Col xs={12} md={12}>
-              {<Tip />}
+              <Well>
+                {<Tip />}
+              </Well>
             </Col>
             <Col xs={12} md={12}>
-              {<RouteSelect />}
+              <Well>
+                {<DateComponent />}
+              </Well>
             </Col>
             <Col xs={12} md={12}>
-              {<DateComponent />}
+              <Well>
+                {<Time />}
+              </Well>
             </Col>
             <Col xs={12} md={12}>
-              {<Time />}
+              <Well>
+                {<SelectRouteComponent />}
+              </Well>
             </Col>
             <Col xs={12} md={12}>
-              {<Trains />}
+              <Well>
+                {<Trains />}
+              </Well>
             </Col>
           </Row>
         </Grid>

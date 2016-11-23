@@ -18,7 +18,7 @@ class RouteSelect extends Component {
  renderStops(routes){
     var stops = []
    routes.forEach( (route) => {
-     if(route.route === 'Lakeshore West')
+     if(route.route === 'Lakeshore East')
      route.stops.map( (routeStops) => {
         stops.push(routeStops)
         console.log(stops)
