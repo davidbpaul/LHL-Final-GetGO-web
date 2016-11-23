@@ -6,19 +6,24 @@ class SelectRouteComponent extends Component {
     super(props);
 
     this.state = {
-      currentSelectedRoute: 'current',
+      currentSelectedRoute: 'Milton',
+      currentSelectedDepartureStation: 'Please select Route first',
+      currentSelectedDestinationStation: 'Please select Route first',
       RouteStations:
         {
-          LakeshoreWest: ['Union Station', 'Clarkson', 'Oakville', 'Bronte', 'Burlington'],
-          Milton: ['Union Station', 'Kipling', 'Dixie', 'Streetsville', 'Meadowvale', 'Lisgar', 'Milton'],
+          LakeshoreWest: ['Burlington', 'Bronte', 'Oakville', 'Clarkson', 'Union Station'],
+          Milton: ['Meadowvale', 'Streetsville', 'Dixie', 'Kipling', 'Union Station'],
           Kitchener: ['Kitchener Bus Terminal', 'University of Guelph', 'Yorkdale Bus Terminal', 'Union Station Bus Terminal']
         }
     }
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderOptions = this.renderOptions.bind(this);
     this.getRoutes = this.getRoutes.bind(this);
+    this.getStationFromRoutes = this.getStationFromRoutes.bind(this);
+    this.setRouteStateOnChange = this.setRouteStateOnChange.bind(this);
+    this.setDestinationStateOnChange = this.setDestinationStateOnChange.bind(this);
+    this.setDepartureStateOnChange = this.setDepartureStateOnChange.bind(this);
   }
 
   // helper function to get Routes from RouteStation data
@@ -31,13 +36,32 @@ class SelectRouteComponent extends Component {
     return routes
   }
 
-  // iterate over Routes array and create html <option> elements
+  // helper function to get Stations from Route
+  getStationFromRoutes(currentSelectedRoute) {
+    for (var i in this.state.RouteStations) {
+        if (i == currentSelectedRoute)
+        return this.state.RouteStations[i]
+    }
+  }
+
+  // helper function to iterate over array and create html <option> elements
   renderOptions(items) {
     return items.map(item => <option key={item} value={item}>{item}</option>)
   }
 
-  handleChange(event) {
+  setRouteStateOnChange(event) {
     this.setState({currentSelectedRoute: event.target.value});
+    console.log('Route is set to:', this.state.currentSelectedRoute);
+  }
+
+  setDepartureStateOnChange(event) {
+    this.setState({currentSelectedDepartureStation: event.target.value});
+    console.log('Departure station is set to:', this.state.currentSelectedDepartureStation);
+  }
+
+  setDestinationStateOnChange(event) {
+    this.setState({currentSelectedDestinationStation: event.target.value});
+    console.log('Destination station is set to:', this.state.currentSelectedDestinationStation);
   }
 
   handleSubmit(event) {
@@ -47,15 +71,32 @@ class SelectRouteComponent extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Select Route:
-          <select value={this.state.currentSelectedRoute} onChange={this.handleChange}>
+
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label> Select Route: </label>
+          <select value={this.state.currentSelectedRoute} onChange={this.setRouteStateOnChange}>
             { this.renderOptions(this.getRoutes()) }
           </select>
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+          <input type="submit" value="Submit" />
+        </form>
+
+        <form>
+          <label> Select Departure Station: </label>
+          <select value={this.state.currentSelectedDepartureStation} onChange={this.setDepartureStateOnChange}>
+            { this.renderOptions(this.getStationFromRoutes(this.state.currentSelectedRoute)) }
+          </select>
+        </form>
+
+        <form>
+          <label> Select Destination Station: </label>
+          <select value={this.state.currentSelectedDestinationStation} onChange={this.setDestinationStateOnChange}>
+            { this.renderOptions(this.getStationFromRoutes(this.state.currentSelectedRoute)) }
+          </select>
+        </form>
+
+      </div>
+
     );
   }
 }
