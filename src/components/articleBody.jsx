@@ -6,8 +6,8 @@ class ArticleBody extends Component {
   render() {
     return (
       <div>
-      <NavHead />
-      <GridLayout />
+        <NavHead />
+        <GridLayout />
       </div>
     );
   }

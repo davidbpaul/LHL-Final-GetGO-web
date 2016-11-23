@@ -6,7 +6,7 @@ class Time extends Component {
   render() {
     return (
       <div>
-<Well><i className="fa fa-clock-o" aria-hidden="true"></i> At <strong>3pm</strong></Well>
+        <i className="fa fa-clock-o" aria-hidden="true"></i> At <strong>3pm</strong>
       </div>
     );
   }

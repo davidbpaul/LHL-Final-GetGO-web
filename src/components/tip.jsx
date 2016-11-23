@@ -7,12 +7,12 @@ class Tip extends Component {
     return (
       <div>
       <Alert bsStyle="success" onDismiss={this.handleAlertDismiss}>
-     <h4>Tip</h4>
-     <p>you can save your favorite routes</p>
-     <p>
-       <Button bsStyle="success">Check it out</Button>
-     </p>
-   </Alert>
+         <h4>Tip</h4>
+         <p>you can save your favorite routes</p>
+         <p>
+           <Button bsStyle="success">Check it out</Button>
+         </p>
+      </Alert>
 
       </div>
     );

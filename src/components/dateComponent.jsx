@@ -16,13 +16,11 @@ class DateComponent extends Component {
   render() {
     return (
       <div>
-        <Well>
-          <FormGroup>
-            <i className="fa fa-calendar-check-o" aria-hidden="true"></i>
-            <ControlLabel> Date travelling </ControlLabel>
-            <DatePicker id="example-datepicker" value={this.state.value} />
-          </FormGroup>
-        </Well>
+        <FormGroup>
+          <i className="fa fa-calendar-check-o" aria-hidden="true"></i>
+          <ControlLabel> Date travelling </ControlLabel>
+          <DatePicker id="example-datepicker" value={this.state.value} />
+        </FormGroup>
       </div>
     );
   }
