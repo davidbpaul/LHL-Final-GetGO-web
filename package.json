@@ -4,6 +4,7 @@
   "description": "Simple and lightweight Boilerplate for ReactJS projects",
   "scripts": {
     "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "start": "node server.js"
   },
   "repository": {
@@ -45,6 +46,7 @@
     "webpack-dev-server": "1.14.1"
   },
   "dependencies": {
+    "eslint": "^2.7.0",
     "react": "15.2.1",
     "react-bootstrap": "^0.30.6",
     "react-bootstrap-date-picker": "^3.9.0",

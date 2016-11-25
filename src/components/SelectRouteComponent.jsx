@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap';
+import {ControlLabel, FormControl, Button} from 'react-bootstrap';
 
 class SelectRouteComponent extends Component {
   constructor(props) {
@@ -10,6 +10,12 @@ class SelectRouteComponent extends Component {
       currentSelectedDepartureStation: 'Please select Route first',
       currentSelectedDestinationStation: 'Please select Route first',
       RouteStations:
+      // [
+      //   {name: 'LakeshoreWest', stops: ['Burlington', 'Bronte', 'Oakville', 'Clarkson', 'Union Station']},
+      //   {name: 'Milton', stops: []},
+      //   {name: 'Kitchener', stops: []},
+      // ]
+
         {
           LakeshoreWest: ['Burlington', 'Bronte', 'Oakville', 'Clarkson', 'Union Station'],
           Milton: ['Meadowvale', 'Streetsville', 'Dixie', 'Kipling', 'Union Station'],
@@ -51,6 +57,7 @@ class SelectRouteComponent extends Component {
 
   setRouteStateOnChange(event) {
     this.setState({currentSelectedRoute: event.target.value});
+    // this.props.dispatch(newSelectedRoute(event.target.value));
     console.log('Route is set to:', this.state.currentSelectedRoute);
   }
 
